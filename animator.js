@@ -15,14 +15,15 @@ class Animator {
       spritesheet,
       xStart,
       yStart,
-      width,
       height,
+      width,
       frameCount,
       frameDuration,
       framePadding,
       reverse,
       loop,
     });
+
     this.elapsedTime = 0;
     this.totalTime = this.frameCount * this.frameDuration;
   }
@@ -32,7 +33,7 @@ class Animator {
 
     if (this.isDone()) {
       if (this.loop) {
-        this.elpasedTime -= this.totalTime;
+        this.elapsedTime -= this.totalTime;
       } else {
         return;
       }
@@ -44,7 +45,7 @@ class Animator {
     ctx.drawImage(
       this.spritesheet,
       this.xStart + frame * (this.width + this.framePadding),
-      this.yStart,
+      this.yStart, //source from sheet
       this.width,
       this.height,
       x,
@@ -52,10 +53,17 @@ class Animator {
       this.width * scale,
       this.height * scale
     );
+
+    // debug parameter
+    // PARAMS.debug
+    if (params.DEBUG) {
+      ctx.strokeStyle = "White";
+      ctx.strokeRect(x, y, this.width * scale, this.height * scale);
+    }
   }
 
   currentFrame() {
-    return Math.floor(this.elpasedTime / this.frameDuration);
+    return Math.floor(this.elapsedTime / this.frameDuration);
   }
 
   isDone() {
