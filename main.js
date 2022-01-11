@@ -2,10 +2,10 @@ const gameEngine = new GameEngine();
 
 const ASSET_MANAGER = new AssetManager();
 
-ASSET_MANAGER.queueDownload("./sprites/blob idle.png");
-ASSET_MANAGER.queueDownload("./sprites/blob move.png");
-ASSET_MANAGER.queueDownload("./sprites/blob attack.png");
-ASSET_MANAGER.queueDownload("./sprites/blob death.png");
+ASSET_MANAGER.queueDownload("./sprites/blobidle.png");
+ASSET_MANAGER.queueDownload("./sprites/blobmove.png");
+ASSET_MANAGER.queueDownload("./sprites/blobattack.png");
+ASSET_MANAGER.queueDownload("./sprites/blobdeath.png");
 
 ASSET_MANAGER.downloadAll(() => {
   const canvas = document.getElementById("gameWorld");
