@@ -2,10 +2,12 @@ const gameEngine = new GameEngine();
 
 const ASSET_MANAGER = new AssetManager();
 
-ASSET_MANAGER.queueDownload("./sprites/blobidle.png");
-ASSET_MANAGER.queueDownload("./sprites/blobmove.png");
-ASSET_MANAGER.queueDownload("./sprites/blobattack.png");
-ASSET_MANAGER.queueDownload("./sprites/blobdeath.png");
+ASSET_MANAGER.queueDownload("./sprites/B_witch_attack.png");
+ASSET_MANAGER.queueDownload("./sprites/B_witch_charge.png");
+ASSET_MANAGER.queueDownload("./sprites/B_witch_death.png");
+ASSET_MANAGER.queueDownload("./sprites/B_witch_idle.png");
+ASSET_MANAGER.queueDownload("./sprites/B_witch_run.png");
+ASSET_MANAGER.queueDownload("./sprites/B_witch_take_damage.png");
 
 ASSET_MANAGER.downloadAll(() => {
   const canvas = document.getElementById("gameWorld");
